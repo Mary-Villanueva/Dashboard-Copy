@@ -527,11 +527,13 @@ class Op_in_car_des_info
 
 		while (($row = oci_fetch_assoc($stid)) != false)
 		{
-			$this->res_cargas_info[]=$row;
+			#$this->res_cargas_info[]=$row;
+			$res_cargas_info[]= $row;
 		}
 			oci_free_statement($stid);
 			oci_close($conn);
-			return $this->res_cargas_info;
+			#return $this->res_cargas_info;
+			return $res_cargas_info;
 
 	}
 	// -_-_-_-_-_-_-_-_- TERMINA METODO PARA INFORMACION CARGAS(SALIDAS) 1 -_-_-_-_-_-_-_-_-
@@ -579,7 +581,7 @@ class Op_in_car_des_info
 		$union_Noreste = "";
 		$union_Leon = "";
 
-		$STATUS_PROGRAMADOS = "  AND CARGAS.N_STATUS IN(0, 1)";
+		$STATUS_PROGRAMADOS = "  AND CARGAS.N_STATUS IN(0)";
 		$arrayReal =array("Val"=>$select_manufac_global_plaza);
 
 		$arrayCount = count($select_manufac_global_plaza);
@@ -1030,11 +1032,13 @@ class Op_in_car_des_info
 
 		while (($row = oci_fetch_assoc($stid)) != false)
 		{
-			$this->res_cargas_info[]=$row;
+			#$this->res_cargas_info[]=$row;
+			$res_cargas_info[]= $row;
 		}
 			oci_free_statement($stid);
 			oci_close($conn);
-			return $this->res_cargas_info;
+			#return $this->res_cargas_info;
+			return $res_cargas_info;
 
 	}
 
@@ -2117,11 +2121,13 @@ class Op_in_car_des_info
 
 	while (($row = oci_fetch_assoc($stid)) != false)
 	{
-		$this->res_cargas_info[]=$row;
+		#$this->res_cargas_info[]=$row;
+		$res_cargas_info[]= $row;
 	}
 		oci_free_statement($stid);
 		oci_close($conn);
-		return $this->res_cargas_info;
+		#return $this->res_cargas_info;
+		return $res_cargas_info;
 
 }//------- TERMINA METODO PARA CROSSDOCK DE VEHICULO PROGRAMADOS ----------
 
